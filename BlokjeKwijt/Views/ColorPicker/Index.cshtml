@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Kleuren</h1>
+<section>
+    <form>
+        <div id="ColorInputListLeft">
+            <select name="example" size="50">
+                @{
+                    var r = new Random();
+                    var randomNumber = r.Next();
+
+                }
+                @for (int i = 0; i < 250; i++)
+                {
+                    var color = r.Next(0x1000000);
+
+                    <option value="item1" style="color:#@color;">Item 1</option>
+                }
+            </select>
+        </div>
+        <div id="ColorInputListRight">
+            <label for="Name">Naam:</label>
+            <br>
+            <input type="text" id="Name" name="Name">
+            <br>
+            <label for="RGB">RGB:</label>
+            <br>
+            <input type="text" id="RGB" name="RGB">
+            <br>
+            <input type="color" id="colorpicker" name="colorpicker"
+                   value="#f6b73c">
+            <br />
+            <input type="submit" value="Toevoegen">
+            <input type="submit" value="Wijzigen">
+        </div>
+    </form>
+</section>
